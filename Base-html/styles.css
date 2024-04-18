@@ -107,9 +107,9 @@ footer a:hover {
 /* -------------------------------------------------------------------------- */
 
 .main-content-page .container {
-  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  width: 100%;
 }
 
 .main-content-page h1 {
@@ -130,13 +130,13 @@ footer a:hover {
 }
 
 .main-content-page .example-section-page {
-  background-color: #f4f4f4;
+  background-color: #E7E9EB;
   padding: 20px;
   margin-top: 20px;
 }
 
 .main-content-page .inner-box {
-  background-color: #ddd;
+  background-color: #FFF;
   padding: 10px;
   margin-top: 10px;
 }
@@ -169,49 +169,7 @@ footer a:hover {
 /*                                 video page                                 */
 /* -------------------------------------------------------------------------- */
 
-/* .main-content-page-videos .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
 
-.main-content-page-videos h1 {
-  color: #333;
-  font-size: 32px;
-}
-
-.main-content-page-videos p {
-  color: #666;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.main-content-page-videos .section-title-page {
-  color: #008080;
-  font-size: 24px;
-  margin-top: 30px;
-}
-
-.main-content-page-videos .example-section-page {
-  background-color: #f4f4f4;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.main-content-page-videos .inner-box {
-  background-color: #ddd;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-.main-content-page-videos .video-section {
-  margin-top: 30px;
-}
-
-.main-content-page-videos iframe {
-  width: 100%;
-  height: 400px;
-} */
 
 .video-section {
   position: relative;
