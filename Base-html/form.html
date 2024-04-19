@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="styles.css" <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -34,7 +35,7 @@
               <a class="nav-link" aria-current="page" href="search.html" style="color: #ffffff">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="videos-page.html" style="color: #ffffff">Contact</a>
+              <a class="nav-link" href="page.html" style="color: #ffffff">Contact</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -58,49 +59,42 @@
 
   <main class="main-content-page">
     <div class="container">
-      <section> <!-- Sección agregada -->
-        <h1>Título de la Página</h1>
-        <p>
-          Texto explicativo sobre el contenido de la página. Puedes agregar aquí cualquier información relevante que quieras compartir con tus visitantes.
-        </p>
-        <h2 class="section-title-page">Ejemplo</h2>
-        <div class="example example-section-page col-sm-12 col-md-12 col-lg-12">
-          <!-- Aquí puedes insertar tu ejemplo -->
-          <p>Aquí puedes agregar un ejemplo o contenido relacionado.</p>
-          <div class="inner-box">
-            <!-- Nuevo cuadro interior -->
-            <p>String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
-              for (int i = 0; i < cars.length; i++) { System.out.println(cars[i]); }</p>
-              <p>String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
-                for (int i = 0; i < cars.length; i++) { System.out.println(cars[i]); }</p>
-                <p>String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
-                  for (int i = 0; i < cars.length; i++) { System.out.println(cars[i]); }</p>
-                  <p>String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
-                    for (int i = 0; i < cars.length; i++) { System.out.println(cars[i]); }</p>
+        <form id="myForm">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título de la Página:</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="explicacion" class="form-label">Explicación:</label>
+                <textarea class="form-control" id="explicacion" name="explicacion" rows="4" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="titulo-ejemplo" class="form-label">Título del Ejemplo:</label>
+                <input type="text" class="form-control" id="titulo-ejemplo" name="titulo-ejemplo" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="codigo-ejemplo" class="form-label">Código de Ejemplo:</label>
+                <textarea class="form-control" id="codigo-ejemplo" name="codigo-ejemplo" rows="6" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="enlaces-video" class="form-label">Enlaces de Video:</label>
+                <input type="text" class="form-control" id="enlaces-video" name="enlaces-video">
+            </div>
+
+            <div class="btn-group mb-3">
+              <button class="btn-ver-mas" style="margin-right: 20px;">Añadir Página</button>
+              <button class="btn-ver-mas">Editar Página</button>
           </div>
-        </div>
-      </section>
-      <h2 class="section-title-page">Video</h2>
-      <div class="row">
-        <div class="video-section example-section col-sm-12 col-md-6 col-lg-4">
-          <!-- Aquí puedes insertar tu video -->
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-section example-section col-sm-12 col-md-6 col-lg-4">
-          <!-- Aquí puedes insertar tu video -->
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-section example-section col-sm-12 col-md-6 col-lg-4">
-          <!-- Aquí puedes insertar tu video -->
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-      <button class="btn-ver-mas">Ver más</button>
+          
+        </form>
     </div>
-  </main>
+</main>
+
   
-
-
 
   <footer class="text-light text-center py-0">
     <div class="container">
