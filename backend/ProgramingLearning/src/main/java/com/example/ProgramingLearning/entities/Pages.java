@@ -2,6 +2,7 @@ package com.example.ProgramingLearning.entities;
 
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Data;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,6 +16,7 @@ import jakarta.persistence.Table;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="pages")
 public class Pages {
@@ -30,7 +32,6 @@ public class Pages {
     private String example;
 
 
-    public Pages() {
-    }
+
 
 }

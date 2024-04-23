@@ -2,6 +2,14 @@ package com.example.ProgramingLearning.dtos;
 
 import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PagesDTO implements Serializable {
 
 
@@ -12,38 +20,8 @@ public class PagesDTO implements Serializable {
     private String example;
 
     
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getPageTitle() {
-        return pageTitle;
-    }
-    public void setPageTitle(String pageTitle) {
-        this.pageTitle = pageTitle;
-    }
-    public String getExplanation() {
-        return explanation;
-    }
-    public void setExplanation(String explanation) {
-        this.explanation = explanation;
-    }
-    public String getExample() {
-        return example;
-    }
-    public void setExample(String example) {
-        this.example = example;
-    }
-    public PagesDTO(int id, String pageTitle, String explanation, String example) {
-        this.id = id;
-        this.pageTitle = pageTitle;
-        this.explanation = explanation;
-        this.example = example;
-    }
-    public PagesDTO() {
-    }
+   
+
     
     @Override
     public String toString() {

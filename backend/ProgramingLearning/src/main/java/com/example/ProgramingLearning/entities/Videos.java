@@ -1,6 +1,7 @@
 package com.example.ProgramingLearning.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Data;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +13,7 @@ import jakarta.persistence.Table;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="Videos")
 public class Videos {
@@ -22,11 +24,9 @@ public class Videos {
     @Column(name = "link")
     private String link;
     @Column(name = "page_id")
-    private int PageId;
+    private int pageId;
 
 
 
-    public Videos() {
-    }
 
 }
