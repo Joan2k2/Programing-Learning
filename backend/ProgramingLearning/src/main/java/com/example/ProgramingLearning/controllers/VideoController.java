@@ -31,7 +31,7 @@ public class VideoController {
         return videoService.getVideos();
 
     }
-    @GetMapping("/page/{videoId}")
+    @GetMapping("/videos/{videoId}")
     public Optional<Videos> getVideo(@PathVariable("videoId") int videoId){
         return videoService.getVideo(videoId);
 
@@ -43,7 +43,7 @@ public class VideoController {
 
     }
 
-    @DeleteMapping("/{videoId}")
+    @DeleteMapping("/delete/{videoId}")
     public void delete(@PathVariable("videoId") int videoId){
         videoService.delete(videoId);
 

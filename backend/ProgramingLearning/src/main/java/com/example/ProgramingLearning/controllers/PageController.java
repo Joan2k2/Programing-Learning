@@ -40,7 +40,7 @@ public class PageController {
 
     }
 
-    @DeleteMapping("/{pageId}")
+    @DeleteMapping("/delete/{pageId}")
     public void delete(@PathVariable("pageId") int pageId){
         pageService.delete(pageId);
 
