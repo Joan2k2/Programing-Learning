@@ -1,0 +1,81 @@
+<header class="sticky-sm-top sticky-md-top sticky-lg-top sticky-xl-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active"  style="color: #ffffff">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #ffffff">
+                            Lenguages
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="language">
+                            <li>
+                                <a class="dropdown-item" href="videos-page.html" value="es">TypeScript</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="index.html" value="en">Java Script</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <div class="col-lg-6">
+                        <div class="input-group mb-3">
+                            <input id="search" type="text" class="form-control" placeholder="Buscar..."
+                                aria-label="Buscar" aria-describedby="button-search" />
+                            <button style="background-color: #ffffff; border: 1px solid #cccccc"
+                                class="btn btn-primary btn-custom rounded-start-0" type="button" id="button-search">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </ul>
+
+                <!-- ----------------------------------------------------------------------- -->
+                <!--                       Boton login iniciar sesion                        -->
+                <!-- ----------------------------------------------------------------------- -->
+
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#" style="color: #FFFFFF">Iniciar Sesión</a>
+                    <button class="btn btn-primary rounded-pill" type="button"
+                        style="background-color: #1E1F29;">Registrarse</button>
+
+                </div>
+
+                <!-- ----------------------------------------------------------------------- -->
+                <!--                                user menu                                -->
+                <!-- ----------------------------------------------------------------------- -->
+
+                <!-- <div class="btn-group dropstart">
+                    <a href="#" style="color: #fff" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg style="margin-top: -3px" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                        </svg>
+                        User
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        <li><a class="dropdown-item" href="#">Add page</a></li>
+                        <li><a class="dropdown-item" href="#">Edit page</a></li>
+                        <li><a class="dropdown-item" href="#">Delete page</a></li>
+                        <li><a class="dropdown-item" href="#">Delete Account</a></li>
+                        <li><a class="dropdown-item" href="#">Log Out</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </nav>
+</header>

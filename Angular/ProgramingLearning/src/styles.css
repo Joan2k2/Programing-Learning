@@ -1,0 +1,275 @@
+/* You can add global styles to this file, and also import other style files */
+/* ----------------------------------- */
+/*              Estilos Generales      */
+/* ----------------------------------- */
+
+body {
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  app-root {
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+  
+  header {
+    background-color: #282A35 !important; 
+
+  }
+  
+  .navbar-nav .nav-link {
+    color: #FFFFFF !important; 
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #CCCCCC !important; 
+  }
+  
+  .navbar-light .navbar-toggler {
+    border: 1px solid #B0E0E6;
+  }
+
+  @media (min-width: 1553px) {
+    ul.navbar-nav{
+        margin-left: 700px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    ul.navbar-nav{
+        margin-left: 0px;
+    }
+  }
+  
+  /* ----------------------------------- */
+  /*               Estilos Footer        */
+  /* ----------------------------------- */
+  
+  app-footer{
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #282A35; 
+    margin-top: auto;
+    width: 100%;
+  }
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #282A35; 
+    margin-top: auto;
+    width: 100%;
+  }
+  
+  footer a {
+    color: #FFFFFF !important; 
+  }
+  
+  footer a:hover {
+    color: #CCCCCC !important; 
+  }
+  
+  /* ----------------------------------- */
+  /*            Estilos Secciones        */
+  /* ----------------------------------- */
+  
+  .features-icons {
+    min-height: 30vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #search {
+    border-radius: 25px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* border-right: 1px solid #04AA6D; */
+  }
+  
+  #button-search {
+    width: 75px;
+    border-radius: 25px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  #infoPart {
+    background-color: #282A35;
+    color: #F5F5F5 ;
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /*                                 search page                                */
+  /* -------------------------------------------------------------------------- */
+  
+  .search-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: #FFFFCC !important;
+  }
+  
+  .search-result {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    padding-top: 45px;
+    max-width: 800px; 
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+  
+  .search-result h2 {
+    font-size: 20px; 
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /*                                    learning-page                                    */
+  /* -------------------------------------------------------------------------- */
+  
+  .main-content-page .container {
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .main-content-page h1 {
+    color: #333;
+    font-size: 32px;
+  }
+  
+  .main-content-page p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .main-content-page .section-title-page {
+    color: #008080;
+    font-size: 24px;
+    margin-top: 30px;
+  }
+  
+  .main-content-page .example-section-page {
+    background-color: #E7E9EB;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .main-content-page .inner-box {
+    background-color: #FFF;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .main-content-page .video-section {
+    margin-top: 30px;
+  }
+  
+  .main-content-page iframe {
+    width: 100%;
+    height: 400px;
+  }
+  .btn-ver-mas {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-ver-mas:hover {
+    background-color: #006666;
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /*                                 video page                                 */
+  /* -------------------------------------------------------------------------- */
+  
+  
+  
+  .video-section {
+    position: relative;
+    width: 100%;
+    max-width: 360px; /* Ancho máximo de los videos */
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .video-section iframe {
+    width: 100%;
+    height: 200px; /* Altura fija para mantener la relación de aspecto */
+    display: block;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .example-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .example-section .video-section {
+    margin: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .example-section .video-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /*                                 form login                                 */
+  /* -------------------------------------------------------------------------- */
+  
+  
+  .gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #0d8585, #008080, #005d5d, #003838);
+  
+  
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
+    .btn-outline-danger {
+      color: #0d8585;
+      border-color: #0d8585;
+  }
+  .btn-outline-danger:hover {
+    background-color:#0d8585 ;
+    border-color: #0d8585;
+  }

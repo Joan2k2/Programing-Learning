@@ -1,10 +1,10 @@
 package com.example.ProgramingLearning.controllers;
 
-
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,26 +23,30 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
     @GetMapping("/users")
-    public List<Users> getAll(){
+    public List<Users> getAll() {
         return userService.getUsers();
 
     }
-    @GetMapping("/users/{userId}")
-    public Optional<Users> getUser(@PathVariable("userId") int userId){
-        return userService.getUser(userId);
 
+    @GetMapping("/users/{userId}")
+    public ResponseEntity<Users> getUser(@PathVariable("userId") int userId) {
+        Users user = userService.getUser(userId).get();
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping
-    public void saveUpdate(@RequestBody Users user){
+    public void saveUpdate(@RequestBody Users user) {
         userService.saveOrUpdate(user);
 
     }
 
     @DeleteMapping("/delete/{userId}")
-    public void delete(@PathVariable("userId") int userId){
+    public void delete(@PathVariable("userId") int userId) {
         userService.delete(userId);
 
     }
