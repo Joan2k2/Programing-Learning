@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav  mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active"  style="color: #ffffff">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/" routerLink="/" routerLinkActive="active"  style="color: #ffffff">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -18,10 +18,10 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="language">
                             <li>
-                                <a class="dropdown-item" href="videos-page.html" value="es">TypeScript</a>
+                                <a class="dropdown-item" href="/search" routerLink="/search" routerLinkActive="active" value="es">TypeScript</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="index.html" value="en">Java Script</a>
+                                <a class="dropdown-item" href="/search" routerLink="/search" routerLinkActive="active" value="en">Java Script</a>
                             </li>
                         </ul>
                     </li>
@@ -46,9 +46,9 @@
                 <!-- ----------------------------------------------------------------------- -->
 
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="#" style="color: #FFFFFF">Iniciar Sesión</a>
-                    <button class="btn btn-primary rounded-pill" type="button"
-                        style="background-color: #1E1F29;">Registrarse</button>
+                    <a class="nav-link"  href="/login" routerLink="/login" routerLinkActive="active" style="color: #FFFFFF">Iniciar Sesión</a>
+                    <a class="btn btn-primary rounded-pill" 
+                        style="background-color: #1E1F29;" href="/register" routerLink="/register" RouterLinkActive="active">Registrarse</a>
 
                 </div>
 
@@ -56,7 +56,7 @@
                 <!--                                user menu                                -->
                 <!-- ----------------------------------------------------------------------- -->
 
-                <!-- <div class="btn-group dropstart">
+                <div class="btn-group dropstart" [ngStyle]="{'display': logged ? '' : 'none'}">
                     <a href="#" style="color: #fff" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg style="margin-top: -3px" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -74,7 +74,7 @@
                         <li><a class="dropdown-item" href="#">Delete Account</a></li>
                         <li><a class="dropdown-item" href="#">Log Out</a></li>
                     </ul>
-                </div> -->
+                </div>
             </div>
         </div>
     </nav>
