@@ -39,7 +39,7 @@ public class UserController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/user/add")
     public void saveUpdate(@RequestBody Users user) {
         userService.saveOrUpdate(user);
 

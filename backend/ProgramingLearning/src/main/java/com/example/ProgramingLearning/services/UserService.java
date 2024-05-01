@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import com.example.ProgramingLearning.entities.Users;
 import com.example.ProgramingLearning.repositories.UserRepository;
 
@@ -28,7 +30,7 @@ public class UserService {
 
     }
 
-    public void saveOrUpdate (Users user){
+    public void saveOrUpdate (@RequestBody Users user){
         userRepository.save(user);
     }
     public void delete (int id){

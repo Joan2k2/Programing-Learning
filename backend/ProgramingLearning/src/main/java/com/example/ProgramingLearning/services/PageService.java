@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import com.example.ProgramingLearning.entities.Pages;
 import com.example.ProgramingLearning.repositories.PageRepository;
 
@@ -27,7 +29,7 @@ public class PageService {
 
     }
 
-    public void saveOrUpdate (Pages page){
+    public void saveOrUpdate (@RequestBody Pages page){
         pageRepository.save(page);
     }
     public void delete (int id){

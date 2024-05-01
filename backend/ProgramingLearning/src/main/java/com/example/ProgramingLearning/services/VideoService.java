@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import com.example.ProgramingLearning.entities.Videos;
 import com.example.ProgramingLearning.repositories.VideoRepository;
 
@@ -27,7 +29,7 @@ public class VideoService {
 
     }
 
-    public void saveOrUpdate (Videos video){
+    public void saveOrUpdate (@RequestBody Videos video){
         videoRepository.save(video);
     }
     

@@ -34,7 +34,7 @@ public class PageController {
 
     }
 
-    @PostMapping
+    @PostMapping("/page/add")
     public void saveUpdate(@RequestBody Pages page){
         pageService.saveOrUpdate(page);
 
