@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpClientModule  } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Page} from '../interfaces/page';
@@ -11,6 +11,7 @@ import { catchError } from 'rxjs';
 export class ProgramingLearningService {
 
   constructor(public http : HttpClient) { }
+
   //Recoge todas las cartas de la BBDD
   public getAllUsers():Observable<User[]>{
     return this.http.get<User[]>('http://localhost:8080/ProgramingLearning/users')
