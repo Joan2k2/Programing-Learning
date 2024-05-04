@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav  mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/" routerLink="/" routerLinkActive="active"  style="color: #ffffff">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/" routerLink="/" routerLinkActive="active" (click)="onclick()"  style="color: #ffffff">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -27,10 +27,11 @@
                     </li>
                     <div class="col-lg-6">
                         <div class="input-group mb-3">
-                            <input id="search" type="text" class="form-control" placeholder="Buscar..."
+                            <input id="search" type="text" [(ngModel)]="inputSearch" class="form-control" placeholder="Buscar..."
                                 aria-label="Buscar" aria-describedby="button-search" />
                             <button style="background-color: #ffffff; border: 1px solid #cccccc"
-                                class="btn btn-primary btn-custom rounded-start-0" type="button" id="button-search">
+                                class="btn btn-primary btn-custom rounded-start-0" type="button" id="button-search"
+                                (click)="search()">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000"
                                     class="bi bi-search" viewBox="0 0 16 16">
                                     <path
@@ -45,7 +46,7 @@
                 <!--                       Boton login iniciar sesion                        -->
                 <!-- ----------------------------------------------------------------------- -->
 
-                <div class="navbar-nav ms-auto">
+                <div class="navbar-nav ms-auto" [ngStyle]="{'display': isLoggedIn ? 'none' : ''}">
                     <a class="nav-link"  href="/login" routerLink="/login" routerLinkActive="active" style="color: #FFFFFF">Iniciar Sesión</a>
                     <a class="btn btn-primary rounded-pill" 
                         style="background-color: #1E1F29;" href="/register" routerLink="/register" RouterLinkActive="active">Registrarse</a>
@@ -56,7 +57,7 @@
                 <!--                                user menu                                -->
                 <!-- ----------------------------------------------------------------------- -->
 
-                <div class="btn-group dropstart" [ngStyle]="{'display': logged ? '' : 'none'}">
+                <div class="btn-group dropstart ms-auto" [ngStyle]="{'display': isLoggedIn ? '' : 'none'}">
                     <a href="#" style="color: #fff" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg style="margin-top: -3px" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -69,10 +70,10 @@
                     <ul class="dropdown-menu">
                         
                         <li><a class="dropdown-item" href="#">Add page</a></li>
-                        <li><a class="dropdown-item" href="#">Edit page</a></li>
-                        <li><a class="dropdown-item" href="#">Delete page</a></li>
-                        <li><a class="dropdown-item" href="#">Delete Account</a></li>
-                        <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        <li><a class="dropdown-item" href="#" [ngStyle]="{'display': isInPage ? '' : 'none'}">Edit page</a></li>
+                        <li><a class="dropdown-item"  [ngStyle]="{'display': isInPage ? '' : 'none'}">Delete page</a></li>
+                        <li><a class="dropdown-item" (click)="deleteAdcount()" >Delete Account</a></li>
+                        <li><a class="dropdown-item" (click)="closeAdcount()" >Log Out</a></li>
                     </ul>
                 </div>
             </div>

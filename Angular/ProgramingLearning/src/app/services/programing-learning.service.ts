@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Page} from '../interfaces/page';
 import { User} from '../interfaces/user';
 import { Videos} from '../interfaces/videos';
-import { catchError } from 'rxjs';
+import { catchError, map } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -26,8 +26,9 @@ export class ProgramingLearningService {
     return this.http.get<Videos[]>('http://localhost:8080/programingLearning/videos/'+idPage)
   }
 
-  public addUser(user: any): Observable<any> {
-    return this.http.post('http://localhost:8080/api/users/add', user)
+  public saveUpdate(user: any): Observable<any> {
+    console.log("estoy desde servicios y este es el user recibido"+ JSON.stringify(user));
+    return this.http.post('http://localhost:8080/ProgramingLearning/user/add', user)
       .pipe(
         catchError(error => {
           throw error; // Propagar el error
@@ -35,14 +36,15 @@ export class ProgramingLearningService {
       );
   }
 
-
-
-  // //Recoge todas las cartas que coincidan con la busqueda de la BBDD
-  // public getCardByName(name:string | null):Observable<KauriaCard[]>{
-  //   return this.http.get<KauriaCard[]>('http://localhost:8000/cardName/'+name)
-  // }
-  // //Recoge todas las noticias de la BBDD
-  // public getAllNews():Observable<KauriaNews[]>{
-  //   return this.http.get<KauriaNews[]>('http://localhost:8000/allNews')
-  // }
+  public  deleteUser(id: number): Observable<any> {
+    console.log("estoy desde servicios y este es el id recibido"+ id);
+    return this.http.delete('http://localhost:8080/ProgramingLearning/user/delete/' + id, { responseType: 'text' })
+      .pipe(
+        map(response => response),
+        catchError(error => {
+          console.log("hay un error");
+          throw error;
+        })
+      );
+  }
 }

@@ -45,12 +45,18 @@ public class UserController {
 
     @PostMapping("/user/add")
     public void saveUpdate(@RequestBody Users user) {
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("me cago en todo");
+        System.out.println(user);
         userService.saveOrUpdate(user);
 
     }
 
     @DeleteMapping("/user/delete/{userId}")
     public void delete(@PathVariable("userId") int userId) {
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("me cago en todo");
+        System.out.println(userId);
         userService.delete(userId);
 
     }
