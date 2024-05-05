@@ -49,9 +49,9 @@
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <div class="input-group mb-3">
-            <input id="search" type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar"
+            <input id="search" [(ngModel)]="inputSearch" type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar"
               aria-describedby="button-search" />
-            <button class="btn btn-primary rounded-start-0" type="button" id="button-search">
+            <button class="btn btn-primary rounded-start-0" type="button" id="button-search" (click)="search()">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                 viewBox="0 0 16 16">
                 <path

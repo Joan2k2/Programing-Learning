@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
   isInPage: boolean = false;
   inputSearch: string="";
+  matchedPages: { page: Page, matches: number }[] = [];
   
   public constructor(public service:ProgramingLearningService){}
 
@@ -27,7 +28,7 @@ export class HeaderComponent implements OnInit {
   }
   public search(){
     this.searchPages(this.allPages,this.inputSearch);
-    console.log('aaaaaa: ', this.allPages);
+    
   }
 
   /* -------------------------------------------------------------------------- */
@@ -35,22 +36,26 @@ export class HeaderComponent implements OnInit {
   /* -------------------------------------------------------------------------- */
 
 
-  searchPages(allPages: Page[], phrase: string): Page[] {
+  searchPages(allPages: Page[], phrase: string) {
     console.log(allPages);
-    const matchedPages: { page: Page, matches: number }[] = [];
+    this.matchedPages.splice(0,this.matchedPages.length);
 
     // Recorrer el array de páginas y contar las coincidencias
     allPages.forEach(page => {
-      const matches = this.countMatches(page, phrase);
-      matchedPages.push({ page, matches });
+        const matches = this.countMatches(page, phrase);
+        if (matches > 0) { // Solo agregar las páginas con al menos una coincidencia
+            this.matchedPages.push({ page, matches });
+        }
     });
 
     // Ordenar las páginas según el número de coincidencias
-    matchedPages.sort((a, b) => b.matches - a.matches);
+    this.matchedPages.sort((a, b) => b.matches - a.matches);
 
     // Devolver solo las páginas ordenadas
-    return matchedPages.map(matchedPage => matchedPage.page);
-  }
+     this.matchedPages.map(matchedPage => matchedPage.page);
+     console.log('aaaaaa: ', this.matchedPages);
+}
+
 
   private countMatches(page: Page, phrase: string): number {
   // Convertir el título de la página y la frase de búsqueda a minúsculas para una comparación sin distinción entre mayúsculas y minúsculas
