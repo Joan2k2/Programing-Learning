@@ -9,9 +9,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SearchZoneComponent {
 
-  @Input() image : string = '';
-  @Input() title : string = '';
-  @Input() newsbody : string = '';
-  @Input() date: string = '';
+  @Input() id : number = 0;
+  @Input() title : string = 'Título del Resultado de Búsqueda';
+  @Input() explanation : string = 'Descripción corta del resultado de búsqueda. Esto es lo que se mostrará debajo del título en los resultados de búsqueda. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nisl eros, nec suscipit nulla vestibulum eget.';
 
 }

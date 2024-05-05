@@ -59,12 +59,12 @@ body {
     padding: 10px;
     background-color: #282A35; 
     width: 100%;
+    
   }
   footer {
     text-align: center;
     padding: 10px;
     background-color: #282A35; 
-    
     width: 100%;
   }
   
@@ -94,7 +94,7 @@ body {
     /* border-right: 1px solid #04AA6D; */
   }
   
-  #button-search {
+  #button-search,#button-search-home {
     width: 75px;
     border-radius: 25px;
     border-top-left-radius: 0;
