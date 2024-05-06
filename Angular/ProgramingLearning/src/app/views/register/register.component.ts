@@ -65,8 +65,11 @@ export class RegisterComponent {
         };
         console.log('se va a añadir el susuario');
         console.log(newUser);
-        this.service.saveUpdate(newUser);
-        // window.location.href = 'http://localhost:4200/login';
+        this.service.saveUpdate(newUser).subscribe(respose=>{
+          console.log("++++++++++++++++++++++");
+          console.log(respose);
+        });
+        window.location.href = 'http://localhost:4200/login';
       } else {
         console.log('Las contraseñas no coinciden');
       }

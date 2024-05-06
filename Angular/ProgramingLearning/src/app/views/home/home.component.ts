@@ -13,19 +13,19 @@ import { SearchComponent } from '../search/search.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  public constructor(public service:ProgramingLearningService,private router: Router){}
+  public constructor(public service:ProgramingLearningService,private router2: Router){}
   allPages:Page[]=[];
-  isLoggedIn: boolean = false;
-  isInPage: boolean = false;
   inputSearch2: string="";
-  matchedPages2: Page[]=[];
+  matchedPages: Page[]=[];
   
 
   public search2(){
      this.searchPages(this.allPages,this.inputSearch2);
+     this.service.setArray(this.matchedPages);
     
-    // this.router.navigate(["/search"])
-    console.log(this.matchedPages2);
+    this.router2.navigate(["/search"])
+    console.log("voy a recibir el array por servicio");
+    console.log(this.service.getArray());
   }
   
   /* -------------------------------------------------------------------------- */
@@ -35,21 +35,21 @@ export class HomeComponent {
 
   searchPages(allPages: Page[], phrase: string) {
     console.log(allPages);
-    this.matchedPages2.splice(0, this.matchedPages2.length);
+    this.matchedPages.splice(0, this.matchedPages.length);
 
     // Recorrer el array de páginas y agregar las páginas que tengan al menos una coincidencia
     allPages.forEach(page => {
         const matches = this.countMatches(page, phrase);
         if (matches > 0) {
-            this.matchedPages2.push(page); // Agregar la página al array de coincidencias
+            this.matchedPages.push(page); // Agregar la página al array de coincidencias
         }
     });
 
     // Ordenar las páginas según el número de coincidencias (opcional, si aún lo necesitas)
-    this.matchedPages2.sort((a, b) => this.countMatches(b, phrase) - this.countMatches(a, phrase));
+    this.matchedPages.sort((a, b) => this.countMatches(b, phrase) - this.countMatches(a, phrase));
 
-    // No necesitas devolver nada ya que estás modificando directamente el array matchedPages2
-    console.log('aaaaaa: ', this.matchedPages2);
+    // No necesitas devolver nada ya que estás modificando directamente el array matchedPages
+    console.log('aaaaaa: ', this.matchedPages);
 }
 
 private countMatches(page: Page, phrase: string): number {

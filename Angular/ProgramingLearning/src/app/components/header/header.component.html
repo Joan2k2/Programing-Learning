@@ -18,10 +18,10 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="language">
                             <li>
-                                <a class="dropdown-item" href="/search" routerLink="/search" routerLinkActive="active" value="es">TypeScript</a>
+                                <a class="dropdown-item"    value="es" (click)="searchTypeScript()">TypeScript</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="/search" routerLink="/search" routerLinkActive="active" value="en">Java Script</a>
+                                <a class="dropdown-item"   value="en" (click)="searchJava()">Java Script</a>
                             </li>
                         </ul>
                     </li>
@@ -82,4 +82,3 @@
         </div>
     </nav>
 </header>
-<app-search [matchedPages]="matchedPages"></app-search>

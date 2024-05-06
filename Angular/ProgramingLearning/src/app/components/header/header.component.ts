@@ -30,8 +30,23 @@ export class HeaderComponent implements OnInit {
   }
   public search(){
     this.searchPages(this.allPages,this.inputSearch);
+    this.service.setArray(this.matchedPages);
     
-    this.router.navigate(["/search"])
+    this.router.navigate(["/search"]);
+  }
+  public searchJava(){
+    this.searchPages(this.allPages,"Java");
+    
+    this.service.setArray(this.matchedPages);
+    
+    this.router.navigate(["/search"]);
+  }
+  public searchTypeScript(){
+    this.searchPages(this.allPages,"TypeScript");
+    
+    this.service.setArray(this.matchedPages);
+    
+    this.router.navigate(["/search"]);
   }
 
   /* -------------------------------------------------------------------------- */
@@ -90,7 +105,12 @@ private countMatches(page: Page, phrase: string): number {
     let iduser=localStorage.getItem("idUser");
     if(iduser!=null){
       console.log("voya a borrar el user "+ iduser);
-      this.service.deleteUser(parseInt(iduser));
+      this.closeAdcount();
+      this.service.deleteUser(parseInt(iduser)).subscribe(respose=>{
+        console.log("---------------");
+        console.log(respose);
+
+      });
     }
 
     

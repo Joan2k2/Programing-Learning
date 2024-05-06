@@ -11,6 +11,8 @@ import { catchError, map } from 'rxjs';
 export class ProgramingLearningService {
 
   constructor(public http : HttpClient) { }
+  public pages: Page[]=[];
+  
 
   //Recoge todas las cartas de la BBDD
   public getAllUsers():Observable<User[]>{
@@ -28,23 +30,22 @@ export class ProgramingLearningService {
 
   public saveUpdate(user: any): Observable<any> {
     console.log("estoy desde servicios y este es el user recibido"+ JSON.stringify(user));
-    return this.http.post('http://localhost:8080/ProgramingLearning/user/add', user)
-      .pipe(
-        catchError(error => {
-          throw error; // Propagar el error
-        })
-      );
+    return this.http.post('http://localhost:8080/ProgramingLearning/user/add', user);
+      
   }
 
   public  deleteUser(id: number): Observable<any> {
     console.log("estoy desde servicios y este es el id recibido"+ id);
     return this.http.delete('http://localhost:8080/ProgramingLearning/user/delete/' + id, { responseType: 'text' })
-      .pipe(
-        map(response => response),
-        catchError(error => {
-          console.log("hay un error");
-          throw error;
-        })
-      );
+      
+  }
+  public setArray(page:Page[]){
+    this.pages=page;
+
+  }
+  public getArray(){
+
+    return this.pages;
+
   }
 }
