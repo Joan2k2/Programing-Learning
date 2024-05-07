@@ -18,36 +18,16 @@
     </section>
     <h2 class="section-title-page">Video</h2>
     <div class="row">
-      <div class="video-section example-section col-sm-12 col-md-6 col-lg-4">
-        <!-- Aquí puedes insertar tu video -->
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div class="video-section example-section col-sm-12 col-md-6 col-lg-4">
-        <!-- Aquí puedes insertar tu video -->
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div class="video-section example-section col-sm-12 col-md-6 col-lg-4">
-        <!-- Aquí puedes insertar tu video -->
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
+      
+      
+        <!-- Lista de resultados de búsqueda simulados -->
+        
+      
+        @for (video of videos; track video; let i = $index;) {
+         <app-video class="video-section example-section col-sm-12 col-md-6 col-lg-4" [linkVidedo]="video.link"></app-video>
+        }
+      
+      
     </div>
     <button class="btn-ver-mas" href="/videos-page" routerLink="/videos-page" routerLinkActive="active">Ver más</button>
   </div>

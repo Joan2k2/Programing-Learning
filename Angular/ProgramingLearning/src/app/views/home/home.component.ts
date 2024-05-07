@@ -22,7 +22,7 @@ export class HomeComponent {
   public search2(){
      this.searchPages(this.allPages,this.inputSearch2);
      this.service.setArray(this.matchedPages);
-    
+      this.inputSearch2="";
     this.router2.navigate(["/search"])
     console.log("voy a recibir el array por servicio");
     console.log(this.service.getArray());

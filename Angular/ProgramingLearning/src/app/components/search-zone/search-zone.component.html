@@ -1,4 +1,7 @@
 <div class="search-result">
-    <h2><a href="/page" routerLink="/page" routerLinkActive="active" >{{title}}</a></h2>
+
+    <h2>
+      <a (click)="goToPage()" >{{title}}</a>
+    </h2>
     <p>{{explanation}}</p>
   </div>

@@ -18,6 +18,9 @@ export class SearchComponent {
    ngOnInit(){
 
     this.matchedPages= this.service.getArray();
+
+console.log("imprimo págians");
+    console.log(this.matchedPages);
   }
 
 }

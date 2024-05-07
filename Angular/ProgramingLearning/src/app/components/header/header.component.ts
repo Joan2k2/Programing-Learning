@@ -29,6 +29,8 @@ export class HeaderComponent implements OnInit {
     console.log('Valor actual de isLoggedIn$: ', this.isLoggedIn);
   }
   public search(){
+
+    console.log(this.inputSearch);
     this.searchPages(this.allPages,this.inputSearch);
     this.service.setArray(this.matchedPages);
     

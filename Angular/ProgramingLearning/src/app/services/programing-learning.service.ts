@@ -12,7 +12,7 @@ export class ProgramingLearningService {
 
   constructor(public http : HttpClient) { }
   public pages: Page[]=[];
-  
+  public idPage:number=0;
 
   //Recoge todas las cartas de la BBDD
   public getAllUsers():Observable<User[]>{
@@ -21,6 +21,10 @@ export class ProgramingLearningService {
 
   public getAllPages():Observable<Page[]>{
     return this.http.get<Page[]>('http://localhost:8080/programinglearning/pages')
+  }
+
+  getPageById(pageId: number): Observable<Page> {
+    return this.http.get<Page>('http://localhost:8080/programinglearning/page/' + pageId);
   }
 
   //Recoge todas las cartas que coincidan con la busqueda de la BBDD
@@ -39,6 +43,7 @@ export class ProgramingLearningService {
     return this.http.delete('http://localhost:8080/ProgramingLearning/user/delete/' + id, { responseType: 'text' })
       
   }
+
   public setArray(page:Page[]){
     this.pages=page;
 
@@ -46,6 +51,16 @@ export class ProgramingLearningService {
   public getArray(){
 
     return this.pages;
+
+  }
+
+  public setIdPage(id:number){
+    this.idPage=id;
+
+  }
+  public getIdPage(){
+
+    return this.idPage;
 
   }
 }
