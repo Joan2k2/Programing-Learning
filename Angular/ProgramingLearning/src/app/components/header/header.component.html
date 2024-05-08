@@ -71,9 +71,9 @@
                     </a>
                     <ul class="dropdown-menu">
                         
-                        <li><a class="dropdown-item" href="#">Add page</a></li>
-                        <li><a class="dropdown-item" href="#" [ngStyle]="{'display': isInPage ? '' : 'none'}">Edit page</a></li>
-                        <li><a class="dropdown-item"  [ngStyle]="{'display': isInPage ? '' : 'none'}">Delete page</a></li>
+                        <li><a class="dropdown-item" >Add page</a></li>
+                        <li><a class="dropdown-item"  [ngStyle]="{'display': isInPage ? '' : 'none'}">Edit page</a></li>
+                        <li><a class="dropdown-item"  [ngStyle]="{'display': isInPage ? '' : 'none'}" (click)="deletePage()">Delete page</a></li>
                         <li><a class="dropdown-item" (click)="deleteAdcount()" >Delete Account</a></li>
                         <li><a class="dropdown-item" (click)="closeAdcount()" >Log Out</a></li>
                     </ul>

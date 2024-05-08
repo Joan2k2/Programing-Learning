@@ -118,6 +118,16 @@ private countMatches(page: Page, phrase: string): number {
     
   }
 
+  public deletePage(){
+    this.service.deletePage(this.service.getIdPage()).subscribe(respose=>{
+      console.log("---------------");
+      console.log(respose);
+
+    });
+
+    
+  }
+
 
   public closeAdcount(){
     localStorage.clear()
@@ -128,7 +138,15 @@ private countMatches(page: Page, phrase: string): number {
 
   ngOnInit(): void {
     this.isLoggedIn = Boolean(localStorage.getItem("logged")) ;
+    this.service.isInPage2.subscribe(isInPage => {
+      this.isInPage = isInPage;
+    });
+    
+    console.log("estoy en el header");
+    console.log(this.isInPage);
     this.getAllPages();
     // console.log(Boolean(localStorage.getItem("logged")));
   }
+
+
 }

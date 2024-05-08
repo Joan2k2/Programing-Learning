@@ -24,11 +24,13 @@
         
       
         @for (video of videos; track video; let i = $index;) {
-         <app-video class="video-section example-section col-sm-12 col-md-6 col-lg-4" [linkVidedo]="video.link"></app-video>
+          @if (i < 3) {
+            <app-video class="video-section example-section col-sm-12 col-md-6 col-lg-4" [linkVidedo]="video.link"></app-video>
+        }
         }
       
       
     </div>
-    <button class="btn-ver-mas" href="/videos-page" routerLink="/videos-page" routerLinkActive="active">Ver más</button>
+    <button [ngStyle]="{'display': moreThanThree ? '' : 'none'}" class="btn-ver-mas" (click)="goToVideos()">Ver más</button>
   </div>
 </main>

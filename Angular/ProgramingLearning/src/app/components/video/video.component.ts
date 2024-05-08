@@ -10,7 +10,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class VideoComponent {
   constructor(private sanitizer: DomSanitizer) {}
-  @Input() linkVidedo: string = '';
+  @Input() linkVidedo: string = 'HNR971V-9Ek-chU';
 
   // Método para obtener la URL segura del video
   getVideoUrl(): SafeResourceUrl {

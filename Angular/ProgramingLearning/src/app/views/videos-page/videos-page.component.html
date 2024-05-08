@@ -1,1 +1,14 @@
-<p>videos-page works!</p>
+
+<main class="main-content-page-videos">
+    <div class="container">
+      <h2 class="section-title-page-videos">Videos</h2>
+      <div class="row">
+        @for (video of videos; track video; let i = $index;) {
+    
+            <app-video class="video-section example-section col-sm-12 col-md-6 col-lg-4" [linkVidedo]="video.link"></app-video>
+        
+        }
+
+      </div>
+    </div>
+  </main>

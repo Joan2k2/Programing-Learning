@@ -18,7 +18,9 @@ export class SearchZoneComponent {
 
   goToPage() {
     this.service.setIdPage(this.id);
+    console.log("la id de la page es " + this.service.getIdPage());
     localStorage.setItem("isInPage","true");
+    this.service.setInPageStatus(true);
     this.router2.navigate(["/page"])
   }
   ngOnInit() {
