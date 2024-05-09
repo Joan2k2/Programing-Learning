@@ -3,3 +3,9 @@ export interface Videos {
   link: string;
   pageId: number;
 }
+
+export interface VideoLink {
+
+  link: string;
+
+}

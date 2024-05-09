@@ -3,4 +3,5 @@ export interface Page {
   pageTitle: string;
   explanation: string;
   example: string;
+  
 }

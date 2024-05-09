@@ -30,6 +30,17 @@ export class ProgramingLearningService {
   getPageById(pageId: number): Observable<Page> {
     return this.http.get<Page>('http://localhost:8080/programinglearning/page/' + pageId);
   }
+  public saveUpdatePage(page: any): Observable<any> {
+    console.log("estoy desde servicios y este es el user recibido"+ JSON.stringify(page));
+    return this.http.post('http://localhost:8080/programinglearning/page/add', page);
+      
+  }
+
+  public saveUpdateVideo(video: any): Observable<any> {
+    console.log("estoy desde servicios y este es el video recibido"+ JSON.stringify(video));
+    return this.http.post('http://localhost:8080/programingLearning/video/add', video);
+      
+  }
 
   //Recoge todas las cartas que coincidan con la busqueda de la BBDD
   public getVideospage(idPage:number | null):Observable<Videos[]>{
