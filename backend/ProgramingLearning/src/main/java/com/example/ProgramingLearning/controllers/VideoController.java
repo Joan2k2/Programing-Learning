@@ -64,7 +64,7 @@ public class VideoController {
 
     }
 
-    @DeleteMapping("/delete/{videoId}")
+    @DeleteMapping("/video/delete/{videoId}")
     public void delete(@PathVariable("videoId") int videoId){
         videoService.delete(videoId);
 

@@ -59,8 +59,14 @@ export class ProgramingLearningService {
       
   }
 
+  public  deleteVideo(id: number): Observable<any> {
+    console.log("estoy desde servicios y este es el id del video a eliminar recibido"+ id);
+    return this.http.delete('http://localhost:8080/programingLearning/video/delete/' + id, { responseType: 'text' })
+      
+  }
+
   public  deletePage(id: number): Observable<any> {
-    console.log("estoy desde servicios y este es el id recibido de prueba"+ id);
+    console.log("estoy desde servicios deletepage y este es el id recibido de prueba"+ id);
     return this.http.delete('http://localhost:8080/programinglearning/page/delete/' + id, { responseType: 'text' })
       
   }

@@ -118,15 +118,52 @@ private countMatches(page: Page, phrase: string): number {
     
   }
 
-  public deletePage(){
-    this.service.deletePage(this.service.getIdPage()).subscribe(respose=>{
-      console.log("---------------");
-      console.log(respose);
-
+  public deletePage() {
+    console.log("Comenzando proceso de eliminación de página.");
+  
+    // Obtener los videos asociados a la página
+    this.service.getVideospage(this.service.getIdPage()).subscribe(videos => {
+      // Verificar si hay videos asociados
+      if (videos.length > 0) {
+        // Si hay videos asociados, eliminar cada uno de ellos
+        console.log("Borrando videos asociados a la página.");
+        const deleteVideoPromises = videos.map(video => this.service.deleteVideo(video.id).toPromise());
+        Promise.all(deleteVideoPromises).then(() => {
+          // Después de eliminar todos los videos, eliminar la página
+          console.log("Todos los videos han sido eliminados. Procediendo a eliminar la página.");
+          this.service.deletePage(this.service.getIdPage()).subscribe(response => {
+            console.log("Página eliminada correctamente.");
+            // Manejar cualquier otra lógica después de eliminar la página, si es necesario
+            // Realizar la redirección después de eliminar la página
+            window.location.href = 'http://localhost:4200/home';
+          }, error => {
+            console.error("Error al eliminar la página:", error);
+            // Manejar el error de eliminación de página, si es necesario
+          });
+        }).catch(error => {
+          console.error("Error al eliminar los videos:", error);
+          // Manejar el error de eliminación de videos, si es necesario
+        });
+      } else {
+        // Si no hay videos asociados, simplemente eliminar la página
+        console.log("No hay videos asociados a la página. Procediendo a eliminar la página directamente.");
+        this.service.deletePage(this.service.getIdPage()).subscribe(response => {
+          console.log("Página eliminada correctamente.");
+          // Manejar cualquier otra lógica después de eliminar la página, si es necesario
+          // Realizar la redirección después de eliminar la página
+          window.location.href = 'http://localhost:4200/home';
+        }, error => {
+          console.error("Error al eliminar la página:", error);
+          // Manejar el error de eliminación de página, si es necesario
+        });
+      }
+    }, error => {
+      console.error("Error al obtener los videos asociados a la página:", error);
+      // Manejar el error de obtención de videos, si es necesario
     });
-
-    
   }
+  
+  
 
 
   public closeAdcount(){

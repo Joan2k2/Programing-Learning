@@ -71,6 +71,9 @@ export class CreatePageComponent {
           console.log('Video guardado:', response);
         });
       });
+  
+      // Realizar la redirección después de completar todas las operaciones
+      window.location.href = 'http://localhost:4200/home';
     });
   }
   
