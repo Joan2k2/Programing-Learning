@@ -84,7 +84,10 @@ private countMatches(page: Page, phrase: string): number {
     return pageTitleLower.split(phraseLower).length - 1;
 }
 
-  
+public goToEditPage() {
+  this.router.navigate(["/edit-page"]);
+ 
+}
   
 
 
