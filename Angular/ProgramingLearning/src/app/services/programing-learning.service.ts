@@ -31,13 +31,13 @@ export class ProgramingLearningService {
     return this.http.get<Page>('http://localhost:8080/programinglearning/page/' + pageId);
   }
   public saveUpdatePage(page: any): Observable<any> {
-    console.log("estoy desde servicios y este es el user recibido"+ JSON.stringify(page));
+
     return this.http.post('http://localhost:8080/programinglearning/page/add', page);
       
   }
 
   public saveUpdateVideo(video: any): Observable<any> {
-    console.log("estoy desde servicios y este es el video recibido"+ JSON.stringify(video));
+
     return this.http.post('http://localhost:8080/programingLearning/video/add', video);
       
   }
@@ -48,25 +48,25 @@ export class ProgramingLearningService {
   }
 
   public saveUpdate(user: any): Observable<any> {
-    console.log("estoy desde servicios y este es el user recibido"+ JSON.stringify(user));
+
     return this.http.post('http://localhost:8080/ProgramingLearning/user/add', user);
       
   }
 
   public  deleteUser(id: number): Observable<any> {
-    console.log("estoy desde servicios y este es el id recibido"+ id);
+
     return this.http.delete('http://localhost:8080/ProgramingLearning/user/delete/' + id, { responseType: 'text' })
       
   }
 
   public  deleteVideo(id: number): Observable<any> {
-    console.log("estoy desde servicios y este es el id del video a eliminar recibido"+ id);
+
     return this.http.delete('http://localhost:8080/programingLearning/video/delete/' + id, { responseType: 'text' })
       
   }
 
   public  deletePage(id: number): Observable<any> {
-    console.log("estoy desde servicios deletepage y este es el id recibido de prueba"+ id);
+
     return this.http.delete('http://localhost:8080/programinglearning/page/delete/' + id, { responseType: 'text' })
       
   }

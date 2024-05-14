@@ -19,8 +19,7 @@ export class SearchComponent {
 
     this.matchedPages= this.service.getArray();
 
-console.log("imprimo págians");
-    console.log(this.matchedPages);
+
   }
 
 }

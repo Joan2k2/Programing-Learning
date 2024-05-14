@@ -26,11 +26,10 @@ export class HeaderComponent implements OnInit {
 
   public onclick(){
 
-    console.log('Valor actual de isLoggedIn$: ', this.isLoggedIn);
   }
   public search(){
 
-    console.log(this.inputSearch);
+    
     this.searchPages(this.allPages,this.inputSearch);
     this.service.setArray(this.matchedPages);
     
@@ -57,7 +56,7 @@ export class HeaderComponent implements OnInit {
 
 
   searchPages(allPages: Page[], phrase: string) {
-    console.log(allPages);
+
     this.matchedPages.splice(0, this.matchedPages.length);
 
     // Recorrer el array de páginas y agregar las páginas que tengan al menos una coincidencia
@@ -72,7 +71,7 @@ export class HeaderComponent implements OnInit {
     this.matchedPages.sort((a, b) => this.countMatches(b, phrase) - this.countMatches(a, phrase));
 
     // No necesitas devolver nada ya que estás modificando directamente el array matchedPages
-    console.log('aaaaaa: ', this.matchedPages);
+  
 }
 
 private countMatches(page: Page, phrase: string): number {
@@ -97,7 +96,6 @@ public goToEditPage() {
 
   public getAllPages():void{
     this.service.getAllPages().subscribe((response)=>{
-      console.log(response);
       response.forEach(element => {
         this.allPages.push(element);
        
@@ -109,11 +107,10 @@ public goToEditPage() {
   public deleteAdcount(){
     let iduser=localStorage.getItem("idUser");
     if(iduser!=null){
-      console.log("voya a borrar el user "+ iduser);
+
       this.closeAdcount();
       this.service.deleteUser(parseInt(iduser)).subscribe(respose=>{
-        console.log("---------------");
-        console.log(respose);
+
 
       });
     }
@@ -122,46 +119,46 @@ public goToEditPage() {
   }
 
   public deletePage() {
-    console.log("Comenzando proceso de eliminación de página.");
+  
   
     // Obtener los videos asociados a la página
     this.service.getVideospage(this.service.getIdPage()).subscribe(videos => {
       // Verificar si hay videos asociados
       if (videos.length > 0) {
         // Si hay videos asociados, eliminar cada uno de ellos
-        console.log("Borrando videos asociados a la página.");
+ 
         const deleteVideoPromises = videos.map(video => this.service.deleteVideo(video.id).toPromise());
         Promise.all(deleteVideoPromises).then(() => {
           // Después de eliminar todos los videos, eliminar la página
-          console.log("Todos los videos han sido eliminados. Procediendo a eliminar la página.");
+ 
           this.service.deletePage(this.service.getIdPage()).subscribe(response => {
-            console.log("Página eliminada correctamente.");
+
             // Manejar cualquier otra lógica después de eliminar la página, si es necesario
             // Realizar la redirección después de eliminar la página
             window.location.href = 'http://localhost:4200/home';
           }, error => {
-            console.error("Error al eliminar la página:", error);
+
             // Manejar el error de eliminación de página, si es necesario
           });
         }).catch(error => {
-          console.error("Error al eliminar los videos:", error);
+
           // Manejar el error de eliminación de videos, si es necesario
         });
       } else {
         // Si no hay videos asociados, simplemente eliminar la página
-        console.log("No hay videos asociados a la página. Procediendo a eliminar la página directamente.");
+
         this.service.deletePage(this.service.getIdPage()).subscribe(response => {
-          console.log("Página eliminada correctamente.");
+
           // Manejar cualquier otra lógica después de eliminar la página, si es necesario
           // Realizar la redirección después de eliminar la página
           window.location.href = 'http://localhost:4200/home';
         }, error => {
-          console.error("Error al eliminar la página:", error);
+
           // Manejar el error de eliminación de página, si es necesario
         });
       }
     }, error => {
-      console.error("Error al obtener los videos asociados a la página:", error);
+
       // Manejar el error de obtención de videos, si es necesario
     });
   }
@@ -172,7 +169,7 @@ public goToEditPage() {
   public closeAdcount(){
     localStorage.clear()
     // localStorage.setItem("logged","false");
-    console.log(Boolean(localStorage.getItem("logged")));
+  
     location.reload();
   }
 
@@ -182,10 +179,10 @@ public goToEditPage() {
       this.isInPage = isInPage;
     });
     
-    console.log("estoy en el header");
-    console.log(this.isInPage);
+
+
     this.getAllPages();
-    // console.log(Boolean(localStorage.getItem("logged")));
+
   }
 
 

@@ -21,6 +21,6 @@ export class VideoComponent {
 
   ngOnInit() {
     this.getVideoUrl();
-    console.log(this.linkVidedo);
+
   }
 }

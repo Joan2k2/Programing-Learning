@@ -68,7 +68,7 @@ export class CreatePageComponent {
   
         // Guarda el video
         this.service.saveUpdateVideo(this.video).subscribe((response) => {
-          console.log('Video guardado:', response);
+
         });
       });
   
@@ -89,10 +89,10 @@ export class CreatePageComponent {
   onSubmit(): void {
     if (this.formAddPage.valid) {
       // Aquí puedes enviar los datos del formulario a tu servicio o hacer lo que necesites
-      console.log(this.formAddPage.value);
+
     } else {
       // Manejar el caso en que el formulario no sea válido
-      console.log('El formulario no es válido');
+
     }
   }
 }

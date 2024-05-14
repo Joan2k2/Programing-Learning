@@ -16,13 +16,13 @@ export class VideosPageComponent {
   videos: Videos[] = [];
   ngOnInit(){
 
-    console.log(this.service.getIdPage());
+
     
     
 
       this.service.getVideospage(this.service.getIdPage()).subscribe(videos => {
         this.videos = videos;
-        console.log(videos);
+
       });
       
    

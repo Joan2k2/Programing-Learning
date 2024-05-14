@@ -25,14 +25,11 @@ export class LoginComponent implements OnInit {
 
   public onSubmit(){
 
-    console.log('form: ',this.formLogin.getRawValue());
-    console.log('form: ',this.formLogin.value.email);
-    console.log('form: ',this.formLogin.value.password);
   }
 
   public getAllUsers():void{
     this.service.getAllUsers().subscribe((response)=>{
-      console.log(response);
+
       response.forEach(element => {
         this.alluse.push(element);
        
@@ -46,18 +43,15 @@ export class LoginComponent implements OnInit {
     this.getAllUsers();
   }
   public onclick(){
-    console.log("HOLAAAAAAA");
+  
 
     this.alluse.forEach(element => {
       if(element.email===this.formLogin.value.email){
         if(element.password===this.formLogin.value.password){
-          console.log("he accedido a todo");
+ 
           localStorage.setItem("logged","true");
           localStorage.setItem("idUser",element.id.toString());
-          console.log(Boolean(localStorage.getItem("logged")));
-          console.log("-------------------");
-          // console.log(element.id.toString());
-          console.log(localStorage.getItem("idUser"));
+
         }
       }
       

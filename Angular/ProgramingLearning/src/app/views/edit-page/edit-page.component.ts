@@ -51,23 +51,20 @@ export class EditPageComponent {
       // Verificar si hay videos asociados
       if (videos.length > 0) {
         // Si hay videos asociados, eliminar cada uno de ellos
-        console.log("Borrando videos asociados a la página.");
+
         const deleteVideoPromises = videos.map(video => this.service.deleteVideo(video.id).toPromise());
         Promise.all(deleteVideoPromises).then(() => {
 
-          console.log("Todos los videos han sido eliminados correctamente.");
           // Realizar cualquier otra lógica después de eliminar los videos, si es necesario
         }).catch(error => {
 
-          console.error("Error al eliminar los videos:", error);
          
         });
       } else {
 
-        console.log("No hay videos asociados a la página. No se necesita realizar ninguna acción.");
       }
     }, error => {
-      console.error("Error al obtener los videos asociados a la página:", error);
+
       // Manejar el error de obtención de videos, si es necesario
     });
 
@@ -91,14 +88,14 @@ export class EditPageComponent {
 
       // Guarda el video
       this.service.saveUpdateVideo(this.video).subscribe((response) => {
-        console.log('Video guardado:', response);
+
       });
     });
 
     // Guarda la página y luego obtiene todas las páginas
     this.service.saveUpdatePage(thePage).subscribe((response) => {
 
-      console.log("se habría hecho todo y aqui se guarda la página");
+
       // Realizar la redirección después de completar todas las operaciones
        window.location.href = 'http://localhost:4200/home';
     });
@@ -118,22 +115,19 @@ export class EditPageComponent {
 }
 
   ngOnInit() {
-    console.log(this.service.getIdPage());
+
     
     this.service.getPageById(this.service.getIdPage()).subscribe((page: Page) => {
       this.service.getVideospage(page.id).subscribe(videos => {
         this.videos = videos;
   
-        console.log(videos);
+
   
         // Llamar a combineLinksVideos después de que los videos se carguen
         this.combineLinksVideos(this.videos);
   
         this.page = page;
-        console.log("voy a imprimir la page");
-        console.log(page);
-        console.log("voy a imprimir el videostring");
-        console.log(this.videoString);
+
         // Asignar los valores recibidos a los controles del formulario
         this.formEditPage.patchValue({
           title: page.pageTitle,
@@ -149,10 +143,10 @@ export class EditPageComponent {
   onSubmit(): void {
     if (this.formEditPage.valid) {
       // Aquí puedes enviar los datos del formulario a tu servicio o hacer lo que necesites
-      console.log(this.formEditPage.value);
+
     } else {
       // Manejar el caso en que el formulario no sea válido
-      console.log('El formulario no es válido');
+
     }
   }
 

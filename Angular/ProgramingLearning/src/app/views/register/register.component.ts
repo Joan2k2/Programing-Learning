@@ -28,23 +28,20 @@ export class RegisterComponent {
   });
 
   public onSubmit() {
-    console.log('form: ', this.formRegister.getRawValue());
-    console.log('form: ', this.formRegister.value.email);
-    console.log('form: ', this.formRegister.value.password1);
-    console.log('form: ', this.formRegister.value.password2);
+   
   }
 
   public getAllUsers(): void {
     this.service.getAllUsers().subscribe((response) => {
       response.forEach((element) => {
-        console.log(element);
+        
         this.alluse.push(element);
 
       });
     });
   }
   public onclick() {
-    console.log('HOLAAAAAAA');
+    
     let emailExists = false;
     let formRegisterValue=this.formRegister.getRawValue();
 
@@ -63,18 +60,16 @@ export class RegisterComponent {
           email: formRegisterValue.email,
           password: formRegisterValue.password1,
         };
-        console.log('se va a añadir el susuario');
-        console.log(newUser);
+
         this.service.saveUpdate(newUser).subscribe(respose=>{
-          console.log("++++++++++++++++++++++");
-          console.log(respose);
+
         });
         window.location.href = 'http://localhost:4200/login';
       } else {
-        console.log('Las contraseñas no coinciden');
+
       }
     } else {
-      console.log('El correo electrónico ya está registrado');
+
     }
 
   }

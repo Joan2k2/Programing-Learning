@@ -27,14 +27,13 @@ export class PageComponent {
     
     this.service.getPageById(this.service.getIdPage()).subscribe(element=>{
 
-      console.log("en la page");
-      console.log(element);
+
       this.title=element.pageTitle;
       this.explanation=element.explanation;
       this.example=element.example;
       this.id=element.id;
       this.service.setIdPage(this.id);
-      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" + this.service.getIdPage());
+
 
       this.service.getVideospage(element.id).subscribe(videos => {
         this.videos = videos;
@@ -43,7 +42,7 @@ export class PageComponent {
         }else{
           this.moreThanThree=false;
         }
-        console.log(videos);
+
       });
       
     });

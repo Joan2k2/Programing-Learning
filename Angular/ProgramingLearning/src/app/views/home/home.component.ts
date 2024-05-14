@@ -24,8 +24,7 @@ export class HomeComponent {
      this.service.setArray(this.matchedPages);
       this.inputSearch2="";
     this.router2.navigate(["/search"])
-    console.log("voy a recibir el array por servicio");
-    console.log(this.service.getArray());
+
   }
   
   /* -------------------------------------------------------------------------- */
@@ -34,7 +33,7 @@ export class HomeComponent {
 
 
   searchPages(allPages: Page[], phrase: string) {
-    console.log(allPages);
+    
     this.matchedPages.splice(0, this.matchedPages.length);
 
     // Recorrer el array de páginas y agregar las páginas que tengan al menos una coincidencia
@@ -49,7 +48,7 @@ export class HomeComponent {
     this.matchedPages.sort((a, b) => this.countMatches(b, phrase) - this.countMatches(a, phrase));
 
     // No necesitas devolver nada ya que estás modificando directamente el array matchedPages
-    console.log('aaaaaa: ', this.matchedPages);
+    
 }
 
 private countMatches(page: Page, phrase: string): number {
@@ -65,7 +64,7 @@ private countMatches(page: Page, phrase: string): number {
 
 public getAllPages():void{
   this.service.getAllPages().subscribe((response)=>{
-    console.log(response);
+    
     response.forEach(element => {
       this.allPages.push(element);
      
@@ -76,7 +75,7 @@ public getAllPages():void{
 
 ngOnInit(): void {
   this.getAllPages();
-  // console.log(Boolean(localStorage.getItem("logged")));
+
 }
 
 }
