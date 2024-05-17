@@ -114,7 +114,7 @@ public goToEditPage() {
 
       });
     }
-
+    window.location.href = 'http://localhost:4200/home';
     
   }
 
@@ -167,10 +167,12 @@ public goToEditPage() {
 
 
   public closeAdcount(){
+    window.location.href = 'http://localhost:4200/home';
     localStorage.clear()
+    
     // localStorage.setItem("logged","false");
   
-    location.reload();
+    
   }
 
   ngOnInit(): void {

@@ -54,7 +54,7 @@ export class EditPageComponent {
 
         const deleteVideoPromises = videos.map(video => this.service.deleteVideo(video.id).toPromise());
         Promise.all(deleteVideoPromises).then(() => {
-
+          
           // Realizar cualquier otra lógica después de eliminar los videos, si es necesario
         }).catch(error => {
 
